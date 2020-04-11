@@ -31,3 +31,34 @@ def countTriplets(arr, r):
     return count
 
 countTriplets([1, 2, 2, 4], 2)
+
+
+def freqQuery(queries):
+    from collections import Counter
+    frequency = Counter()
+    count = Counter()
+
+    results = []
+
+    for query, value in queries:
+
+        if query == 1:
+            count[frequency[value]] -= 1
+            frequency[value] += 1
+            count[frequency[value]] += 1
+
+        elif query == 2 and frequency[value] > 0:
+            count[frequency[value]] -= 1
+            frequency[value] -= 1
+            count[frequency[value]] += 1
+
+        elif query == 3:
+            if count.get(value):
+                results.append(1)
+            else:
+                results.append(0)
+
+    return results
+
+freqQuery((1, 1), (1, 1), (2, 1), (3, 1))
+
