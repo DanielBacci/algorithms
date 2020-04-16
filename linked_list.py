@@ -31,3 +31,9 @@ def reverse(head):
         return head
 
     return reverse(head.prev)
+
+def findMergeNode(Ahead, Bhead):
+    a_head, b_head = Ahead, Bhead
+    while a_head != b_head:
+        a_head, b_head = a_head.next or Ahead, b_head.next or Bhead
+    return a_head.data
