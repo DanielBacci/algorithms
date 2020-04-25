@@ -20,7 +20,8 @@ class Stack:
         self.top = node.node_next
         if not self.top:
             self.bottom = None
-
+           
+        self.lenght -= 1
         return node.value
 
     def push(self, value):
