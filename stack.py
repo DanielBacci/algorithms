@@ -51,3 +51,26 @@ print(stack.pop() == 11)
 print(stack.peek() == 10)
 print(stack.pop() == 10)
 print(stack.pop() is None)
+
+
+def is_balanced(s):
+    right = []
+    
+    brackets = {
+        '{': '}',
+        '[': ']',
+        '(': ')'
+    }
+
+    for letter in s:
+        if brackets.get(letter):
+            right.append(brackets[letter])
+            continue
+        
+        if right.pop() != letter:
+            return "NO"
+    return "YES"
+
+is_balanced('{[()]}')
+
+
