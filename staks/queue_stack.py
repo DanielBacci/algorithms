@@ -8,10 +8,10 @@ def riddle(arr):
         while right + 1 < len(arr) and arr[right + 1] >= arr[i]:
             right += 1
 
-        while left - 1 >= 0 and arr[left - 1]>= arr[i]:
+        while left - 1 >= 0 and arr[left - 1] >= arr[i]:
             left -= 1
 
         for j in range(right - left + 1):
-            maximum[j]= max(maximum[j], arr[i])
+            maximum[j] = max(maximum[j], arr[i])
 
     return maximum

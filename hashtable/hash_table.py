@@ -1,4 +1,4 @@
-def sherlockAndAnagrams(word):
+def sherlock_and_anagrams(word):
     from collections import defaultdict
 
     items = defaultdict(int)
@@ -14,9 +14,10 @@ def sherlockAndAnagrams(word):
 
     return total
 
-sherlockAndAnagrams('cdcd')
+# sherlock_and_anagrams('cdcd')
 
-def countTriplets(arr, r):
+
+def count_triplets(arr, r):
     from collections import defaultdict
 
     v2 = defaultdict(int)
@@ -25,15 +26,15 @@ def countTriplets(arr, r):
 
     for k in arr:
         count += v3[k]
-        v3[k*r] += v2[k]
-        v2[k*r] += 1
+        v3[k * r] += v2[k]
+        v2[k * r] += 1
 
     return count
 
-countTriplets([1, 2, 2, 4], 2)
+# count_triplets([1, 2, 2, 4], 2)
 
 
-def freqQuery(queries):
+def freq_query(queries):
     from collections import Counter
     frequency = Counter()
     count = Counter()
@@ -60,5 +61,5 @@ def freqQuery(queries):
 
     return results
 
-freqQuery((1, 1), (1, 1), (2, 1), (3, 1))
 
+# freq_query((1, 1), (1, 1), (2, 1), (3, 1))

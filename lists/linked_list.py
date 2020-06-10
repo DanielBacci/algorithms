@@ -1,4 +1,4 @@
-def insertNodeAtPosition(head, data, position):
+def insert_node_at_position(head, data, position):
     item = head
     for index in range(1, position):
         item = item.next
@@ -7,10 +7,11 @@ def insertNodeAtPosition(head, data, position):
     node.next = item.next
     item.next = node
     return head
-    
+
+
 def sortedInsert(head, data):
     node = DoublyLinkedListNode(data)
-    if (head == None):
+    if not head:
         return node
     elif (data < head.data):
         node.next = head
@@ -18,19 +19,21 @@ def sortedInsert(head, data):
         return node
     else:
         node = sortedInsert(head.next, data)
-        head.next = node 
+        head.next = node
         node.prev = head
         return head
+
 
 def reverse(head):
     if not head:
         return head
-    
+
     head.next, head.prev = head.prev, head.next
     if not head.prev:
         return head
 
     return reverse(head.prev)
+
 
 def findMergeNode(Ahead, Bhead):
     a_head, b_head = Ahead, Bhead
