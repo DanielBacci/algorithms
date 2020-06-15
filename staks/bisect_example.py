@@ -17,7 +17,6 @@ def activityNotifications(expenditure, d):
         if expenditure[index] >= 2 * median(last_d):
             notifications += 1
 
-        import ipdb; ipdb.set_trace()
         del last_d[bisect_left(last_d, expenditure[index - d])]
         insort_left(last_d, expenditure[index])
     return notifications
