@@ -11,12 +11,13 @@ def unique_characters(string):
     """
 
     for index in range(len(string)):
-        bit_index = ord(string[index]) - ord('a')
+        bit_index = ord(string[index]) - ord('a') 
+        ### I will get the index of char at the table. A = 97 and Z = 122, but ord('a') - ord('a') => 0
  
-        if ((bit_index) > -1):
+        if ((bit_index) > -1): # Less than -1 is invalid argument
             if ((checker & ((1 << bit_index))) > 0):
                 ### It will make a AND (&). Ex. 0001 & 0010 = 0000
-                ### That's why I need to compare > 0, because and of 0010 & 0010 => 0010 => 2
+                ### That's why I need to compare > 0, because of 0010 & 0010 => 0010 => 2.
                 return False
 
             checker = checker | (1 << bit_index)
