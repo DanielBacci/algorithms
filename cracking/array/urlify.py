@@ -24,3 +24,7 @@ def URLify(string):
     return string
 
 URLify('Mr. John Smith')
+
+O(A)
+O(A) - Memory Space
+
