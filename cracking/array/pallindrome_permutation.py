@@ -12,9 +12,8 @@ def canPermutePalindrome(self, s: str) -> bool:
 
 def is_permutation_palindrome(string):
     bit = 0
-    import ipdb; ipdb.set_trace()
     for char in string:
-        char_ord = ord(char)
+        char_ord = ord(char) - ord('a')
 
         mask = 1 << char_ord
         if (bit & mask) == 0:
