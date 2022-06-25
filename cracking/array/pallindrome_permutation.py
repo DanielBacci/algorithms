@@ -13,8 +13,8 @@ def canPermutePalindrome(self, s: str) -> bool:
 def is_permutation_palindrome(string):
     bit = 0
     for char in string:
-        char_ord = ord(char) - ord('a')
-
+        char_ord = ord(char) - ord('a') 
+        
         mask = 1 << char_ord
         if (bit & mask) == 0:
             bit |= mask
@@ -22,3 +22,5 @@ def is_permutation_palindrome(string):
             bit &= ~mask
 
     return (bit & (bit - 1)) == 0
+
+is_permutation_palindrome("tactcoa")
