@@ -129,4 +129,3 @@ Graphs are one of the most versatile and widely used data structures. They repre
 
 ---
 
-Would you like specific coding examples for graph algorithms or real-world problems?
