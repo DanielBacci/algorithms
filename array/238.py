@@ -1,17 +1,16 @@
-def productExceptSelf(nums):
-    n = len(nums)
-    answer = [1] * n  # inicializa o array de resposta com 1s
-    
-    # --- Passo 1: calcular prefixo (produto da esquerda) ---
-    prefix = 1
-    for i in range(n):
-        answer[i] = prefix      # produto de todos elementos à esquerda de i
-        prefix *= nums[i]        # atualiza prefixo acumulado
-    
-    # --- Passo 2: multiplicar pelo sufixo (produto da direita) ---
-    suffix = 1
-    for i in range(n - 1, -1, -1):
-        answer[i] *= suffix     # multiplica pelo produto da direita
-        suffix *= nums[i]       # atualiza sufixo acumulado
-    
-    return answer
+def product_except_self(numbers):
+
+    acc_pre = 1
+    cache_result = []
+    for index, number in enumerate(numbers):
+        cache_result.append(acc_pre)
+        acc_pre *= number
+
+    acc_pos = 1
+    n = len(numbers)
+    for i, number in enumerate(reversed(numbers)):
+        original_index = n - 1 - i
+        cache_result[original_index] *= acc_pos
+        acc_pos *= numbers[original_index]
+
+    return cache_result
