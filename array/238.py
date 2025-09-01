@@ -1,4 +1,7 @@
 class Solution:
+    """
+    Pre and Post Accumulation
+    """    
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         pre = 1
         cache_result = []
@@ -6,11 +9,12 @@ class Solution:
             cache_result.append(pre)
             pre *= number
 
-        pos = 1
+        post = 1
         n = len(nums)
         for i, number in enumerate(reversed(nums)):
             original_index = n - 1 - i
-            cache_result[original_index] *= pos
-            pos *= nums[original_index]
+            cache_result[original_index] *= post
+            post *= nums[original_index]
 
         return cache_result
+
